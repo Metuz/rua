@@ -17,6 +17,7 @@ class TeachersController < ApplicationController
     @teacher = Teacher.new
     @academies = Academy.all
     @subjects = Subject.all
+    3.times { @teacher.posts.build }
   end
 
   # GET /teachers/1/edit
@@ -73,6 +74,6 @@ class TeachersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def teacher_params
-      params.require(:teacher).permit(:name, :lname, :mname, :pin, :degree, :master, :dictamen, :shift, :age, {academy_ids: []}, {subject_ids: []})
+      params.require(:teacher).permit(:name, :lname, :mname, :pin, :degree, :master, :dictamen, :shift, :age, :total_hrs, {academy_ids: []}, {subject_ids: []}, posts_attributes: [:id, :name, :hrs, :_destroy])
     end
 end

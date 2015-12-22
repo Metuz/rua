@@ -51,7 +51,7 @@
     <p>
       Academies
     </p>
-    <% @academies.each do |academy| %>
+    <% Academy.all.each do |academy| %>
       <div class="checkbox">
         <label>
           <%= check_box_tag 'teacher[academy_ids][]', academy.id, f.object.academies.include?(academy) %> <%= academy.name %>
@@ -62,11 +62,22 @@
     <p>
       Subjects
     </p>
-    <% @subjects.each do |subject| %>
+    <% Subject.all.each do |subject| %>
       <div class="checkbox">
         <label>
           <%= check_box_tag 'teacher[subject_ids][]', subject.id, f.object.subjects.include?(subject) %> <%= subject.name %>
         </label>
+    <% end %>
+  </div>
+  <div class="field">
+    <p>
+      Posts
+    </p>
+    <%= f.fields_for :posts do |post| %>
+      <%= post.label :name %>
+      <%= post.text_field :name %><br>
+      <%= post.label :hrs %>
+      <%= post.number_field :hrs %><br>
     <% end %>
   </div>
   <div class="actions">

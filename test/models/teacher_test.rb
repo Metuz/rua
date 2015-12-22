@@ -52,6 +52,11 @@ class TeacherTest < ActiveSupport::TestCase
     assert_not @teacher.valid?
   end
 
+  test "hrs should be less or equal than 40" do
+    @teacher.total_hrs = 45
+    assert_not @teacher.valid?
+  end
+
   test "teacher's pin shouldn't repeat" do
     @teacher_dup = @teacher.dup
     @teacher_dup.save
