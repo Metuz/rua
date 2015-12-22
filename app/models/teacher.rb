@@ -9,7 +9,7 @@ class Teacher < ActiveRecord::Base
   validates :master, length: { maximum: 20 }
   validates :shift, presence: true, length: { maximum: 20 }
   validates :dictamen, presence: true, length: { maximum: 20 }
-  validates :age, presence: true
+  validates_numericality_of :age, only_integer: true
   VALID_PIN_REGEX = /\A\d*$\z/i
 	validates :pin, presence: true, format: { with: VALID_PIN_REGEX }, uniqueness: true
 end

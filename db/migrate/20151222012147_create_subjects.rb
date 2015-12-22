@@ -4,7 +4,7 @@ class CreateSubjects < ActiveRecord::Migration
       t.string :name
       t.string :pin
       t.string :credits
-      t.string :period
+      t.float :period
 
       t.timestamps
     end
