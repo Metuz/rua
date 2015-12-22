@@ -1,5 +1,7 @@
 class Subject < ActiveRecord::Base
   belongs_to :academy
+  has_many :subject_teachers
+  has_many :teachers, through: :subject_teachers
 
   validates :name, presence: true, length: { maximum: 50 }, uniqueness: { case_sensetive: true }
   validates :pin, presence: true, length: { maximum: 10 }

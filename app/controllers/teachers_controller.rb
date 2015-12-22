@@ -16,11 +16,13 @@ class TeachersController < ApplicationController
   def new
     @teacher = Teacher.new
     @academies = Academy.all
+    @subjects = Subject.all
   end
 
   # GET /teachers/1/edit
   def edit
     @academies = Academy.all
+    @subjects = Subject.all
   end
 
   # POST /teachers
@@ -71,6 +73,6 @@ class TeachersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def teacher_params
-      params.require(:teacher).permit(:name, :lname, :mname, :pin, :degree, :master, :dictamen, :shift, :age, {academy_ids: []})
+      params.require(:teacher).permit(:name, :lname, :mname, :pin, :degree, :master, :dictamen, :shift, :age, {academy_ids: []}, {subject_ids: []})
     end
 end

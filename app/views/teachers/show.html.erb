@@ -52,5 +52,12 @@
   <% end %>
 </p>
 
+<p>
+  <strong>Subjects:</strong>
+  <% @teacher.subjects.each do |subject| %>
+    <%= subject.name %>
+  <% end %>
+</p>
+
 <%= link_to 'Edit', edit_teacher_path(@teacher) %> |
 <%= link_to 'Back', teachers_path %>

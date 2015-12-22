@@ -1,6 +1,8 @@
 class Teacher < ActiveRecord::Base
   has_many :academy_teachers
   has_many :academies, through: :academy_teachers
+  has_many :subject_teachers
+  has_many :subjects, through: :subject_teachers
 
   validates :name, presence: true, length: { maximum: 40 }
   validates :lname, presence: true, length: { maximum: 20 }
