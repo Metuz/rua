@@ -45,5 +45,12 @@
   <%= @teacher.age %>
 </p>
 
+<p>
+  <strong>Academies:</strong>
+  <% @teacher.academies.each do |academy| %>
+    <%= academy.name %>
+  <% end %>
+</p>
+
 <%= link_to 'Edit', edit_teacher_path(@teacher) %> |
 <%= link_to 'Back', teachers_path %>

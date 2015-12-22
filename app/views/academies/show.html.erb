@@ -5,5 +5,12 @@
   <%= @academy.name %>
 </p>
 
+<p>
+  <strong>Teachers:</strong>
+  <% @academy.teachers.each do |teacher| %>
+    <%= teacher.name %>
+  <% end %>
+</p>
+
 <%= link_to 'Edit', edit_academy_path(@academy) %> |
 <%= link_to 'Back', academies_path %>

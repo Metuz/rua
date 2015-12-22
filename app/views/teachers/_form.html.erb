@@ -47,6 +47,14 @@
     <%= f.label :age %><br>
     <%= f.number_field :age %>
   </div>
+  <div class="field">
+    <% @academies.each do |academy| %>
+      <div class="checkbox">
+        <label>
+          <%= check_box_tag 'teacher[academy_ids][]', academy.id %> <%= academy.name %>
+        </label>
+    <% end %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>
