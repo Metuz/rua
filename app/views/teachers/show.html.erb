@@ -59,5 +59,11 @@
   <% end %>
 </p>
 
+<p>
+  <strong>Posts:</strong>
+  <% @teacher.posts.each do |post| %>
+    <%= post.name %> <%= post.hrs %>,
+  <% end %>
+</p>
 <%= link_to 'Edit', edit_teacher_path(@teacher) %> |
 <%= link_to 'Back', teachers_path %>
