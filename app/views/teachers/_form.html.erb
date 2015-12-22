@@ -51,7 +51,7 @@
     <% @academies.each do |academy| %>
       <div class="checkbox">
         <label>
-          <%= check_box_tag 'teacher[academy_ids][]', academy.id %> <%= academy.name %>
+          <%= check_box_tag 'teacher[academy_ids][]', academy.id, f.object.academies.include?(academy) %> <%= academy.name %>
         </label>
     <% end %>
   </div>
