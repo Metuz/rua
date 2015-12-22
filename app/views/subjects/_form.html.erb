@@ -28,8 +28,8 @@
     <%= f.text_field :period %>
   </div>
   <div class="field">
-    <%= f.label :belongs_to %><br>
-    <%= f.text_field :belongs_to %>
+    <%= f.label :academy_id %><br>
+    <%= collection_select(:subject, :academy_id, Academy.all, :id, :name) %>
   </div>
   <div class="actions">
     <%= f.submit %>

@@ -12,5 +12,12 @@
   <% end %>
 </p>
 
+<p>
+  <strong>Subjects:</strong>
+  <% @academy.subjects.each do |subject| %>
+    <%= subject.name %>
+  <% end %>
+</p>
+
 <%= link_to 'Edit', edit_academy_path(@academy) %> |
 <%= link_to 'Back', academies_path %>
