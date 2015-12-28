@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :masters
+
   resources :subjects
 
   resources :teachers
