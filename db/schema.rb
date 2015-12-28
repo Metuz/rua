@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151228215613) do
+ActiveRecord::Schema.define(version: 20151228220946) do
 
   create_table "academies", force: true do |t|
     t.string   "name"
@@ -48,6 +48,20 @@ ActiveRecord::Schema.define(version: 20151228215613) do
   end
 
   add_index "posts", ["teacher_id"], name: "index_posts_on_teacher_id"
+
+  create_table "students", force: true do |t|
+    t.string   "name"
+    t.string   "lname"
+    t.string   "mname"
+    t.string   "pin"
+    t.string   "entry"
+    t.string   "graduation"
+    t.integer  "master_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "students", ["master_id"], name: "index_students_on_master_id"
 
   create_table "subject_teachers", force: true do |t|
     t.integer  "subject_id"

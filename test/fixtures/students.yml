@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  lname: MyString
+  mname: MyString
+  pin: MyString
+  entry: MyString
+  graduation: MyString
+  master_id: 
+
+two:
+  name: MyString
+  lname: MyString
+  mname: MyString
+  pin: MyString
+  entry: MyString
+  graduation: MyString
+  master_id: 
