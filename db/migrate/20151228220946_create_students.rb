@@ -5,8 +5,8 @@ class CreateStudents < ActiveRecord::Migration
       t.string :lname
       t.string :mname
       t.string :pin
-      t.string :entry
-      t.string :graduation
+      t.datetime :entry
+      t.datetime :graduation
       t.references :master, index: true
 
       t.timestamps

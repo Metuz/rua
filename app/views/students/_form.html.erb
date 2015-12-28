@@ -37,7 +37,7 @@
   </div>
   <div class="field">
     <%= f.label :master_id %><br>
-    <%= f.text_field :master_id %>
+    <%= collection_select(:student, :master_id, Master.all, :id, :name) %>
   </div>
   <div class="actions">
     <%= f.submit %>

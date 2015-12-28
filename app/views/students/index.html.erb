@@ -21,9 +21,9 @@
         <td><%= student.lname %></td>
         <td><%= student.mname %></td>
         <td><%= student.pin %></td>
-        <td><%= student.entry %></td>
+        <td><%= student.entry.strftime("%d/%m/%Y") %></td>
         <td><%= student.graduation %></td>
-        <td><%= student.master %></td>
+        <td><%= student.master.name %></td>
         <td><%= link_to 'Show', student %></td>
         <td><%= link_to 'Edit', edit_student_path(student) %></td>
         <td><%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } %></td>

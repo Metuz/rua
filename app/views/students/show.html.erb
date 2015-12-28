@@ -22,7 +22,7 @@
 
 <p>
   <strong>Entry:</strong>
-  <%= @student.entry %>
+  <%= @student.entry.strftime("%d/%m/%Y") %>
 </p>
 
 <p>
@@ -32,7 +32,7 @@
 
 <p>
   <strong>Master:</strong>
-  <%= @student.master %>
+  <%= @student.master.name %>
 </p>
 
 <%= link_to 'Edit', edit_student_path(@student) %> |
