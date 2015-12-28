@@ -31,6 +31,10 @@
     <%= f.label :academy_id %><br>
     <%= collection_select(:subject, :academy_id, Academy.all, :id, :name) %>
   </div>
+  <div class="field">
+    <%= f.label :master_id %><br>
+    <%= collection_select(:subject, :master_id, Master.all, :id, :name) %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>

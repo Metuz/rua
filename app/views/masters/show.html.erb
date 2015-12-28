@@ -5,5 +5,12 @@
   <%= @master.name %>
 </p>
 
+<p>
+  <strong>Subjects:</strong>
+  <% @master.subjects.each do |subject| %>
+    <%= subject.name %>
+  <% end %>
+</p>
+
 <%= link_to 'Edit', edit_master_path(@master) %> |
 <%= link_to 'Back', masters_path %>

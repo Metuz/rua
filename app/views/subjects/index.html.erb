@@ -8,6 +8,7 @@
       <th>Credits</th>
       <th>Period</th>
       <th>Academy</th>
+      <th>Master</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -20,6 +21,7 @@
         <td><%= subject.credits %></td>
         <td><%= subject.period %></td>
         <td><%= subject.academy.name %></td>
+        <td><%= subject.master.name %></td>
         <td><%= link_to 'Show', subject %></td>
         <td><%= link_to 'Edit', edit_subject_path(subject) %></td>
         <td><%= link_to 'Destroy', subject, method: :delete, data: { confirm: 'Are you sure?' } %></td>

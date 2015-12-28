@@ -26,6 +26,11 @@
 </p>
 
 <p>
+  <strong>Master:</strong>
+  <%= @subject.master.name %>
+</p>
+
+<p>
   <strong>Teachers:</strong>
   <% @subject.teachers.each do |teacher| %>
     <%= teacher.name %>
