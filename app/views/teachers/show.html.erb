@@ -1,69 +1,89 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @teacher.name %>
-</p>
-
-<p>
-  <strong>Lname:</strong>
-  <%= @teacher.lname %>
-</p>
-
-<p>
-  <strong>Mname:</strong>
-  <%= @teacher.mname %>
-</p>
-
-<p>
-  <strong>Pin:</strong>
-  <%= @teacher.pin %>
-</p>
-
-<p>
-  <strong>Degree:</strong>
-  <%= @teacher.degree %>
-</p>
-
-<p>
-  <strong>Master:</strong>
-  <%= @teacher.master %>
-</p>
-
-<p>
-  <strong>Dictamen:</strong>
-  <%= @teacher.dictamen %>
-</p>
-
-<p>
-  <strong>Shift:</strong>
-  <%= @teacher.shift %>
-</p>
-
-<p>
-  <strong>Age:</strong>
-  <%= @teacher.age %>
-</p>
-
-<p>
-  <strong>Academies:</strong>
-  <% @teacher.academies.each do |academy| %>
-    <%= academy.name %>
-  <% end %>
-</p>
-
-<p>
-  <strong>Subjects:</strong>
-  <% @teacher.subjects.each do |subject| %>
-    <%= subject.name %>
-  <% end %>
-</p>
-
-<p>
-  <strong>Posts:</strong>
-  <% @teacher.posts.each do |post| %>
-    <%= post.name %> <%= post.hrs %>,
-  <% end %>
-</p>
-<%= link_to 'Edit', edit_teacher_path(@teacher) %> |
-<%= link_to 'Back', teachers_path %>
+<div class="page-header">
+  <div class="page-title">
+    <h2>Profesor: <%= @teacher.name %> <%= @teacher.lname %> <%= @teacher.mname %> </h2>
+    <p id="notice"><%= notice %></p>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <dl class="dl-horizontal">
+      <dt>Número de Empleado</dt>
+      <dd><%= @teacher.pin %></dd>
+      <br>
+      <dt>Licenciatura</dt>
+      <dd><%= @teacher.degree %></dd>
+      <br>
+      <dt>Postgrado</dt>
+      <dd><%= @teacher.master %></dd>
+      <br>
+      <dt>Dictamen</dt>
+      <dd><%= @teacher.dictamen %></dd>
+      <br>
+      <dt>Turno</dt>
+      <dd><%= @teacher.shift %></dd>
+      <br>
+      <dt>Antiguedad</dt>
+      <dd><%= @teacher.age %> años</dd>
+    </dl>
+    <div class="col-md-4">
+      <h3>Academias</h3>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @teacher.academies.each do |academy| %>
+            <tr>
+              <td><%= academy.name %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-md-4">
+      <h3>Unidades de Aprendizaje</h3>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Academia</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @teacher.subjects.each do |subject| %>
+            <tr>
+              <td><%= subject.name %></td>
+              <td><%= subject.academy.name %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-md-4">
+      <h3>Plazas</h3>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Horas</th>
+          </tr>
+        <tbody>
+          <% @teacher.posts.each do |post| %>
+            <tr>
+              <td><%= post.name %></td>
+              <td><%= post.hrs %></td>
+            </tr>
+          <% end %>
+          <tr>
+            <th>Total</th>
+            <th><%= @teacher.total_hrs %></th>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <%= link_to 'Edit', edit_teacher_path(@teacher) %> |
+    <%= link_to 'Back', teachers_path %>
+  </div>
+</div>

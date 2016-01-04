@@ -1,6 +1,12 @@
-<h1>Editing student</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @student %> |
-<%= link_to 'Back', students_path %>
+<div class="page-header">
+  <div class="page-title">
+    <h2>Editar Estudiante</h2>
+    <span>Good morning, John!</span>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <%= render 'form' %>
+    <%= link_to 'Regresar', students_path, :class => "btn btn-primary pull-right" %><br>
+  </div>
+</div>

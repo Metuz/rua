@@ -1,25 +1,30 @@
-<h1>Listing academies</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @academies.each do |academy| %>
-      <tr>
-        <td><%= academy.name %></td>
-        <td><%= link_to 'Show', academy %></td>
-        <td><%= link_to 'Edit', edit_academy_path(academy) %></td>
-        <td><%= link_to 'Destroy', academy, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Academy', new_academy_path %>
+<div class="page-header">
+  <div class="page-title">
+    <h2>Academias</h2>
+    <span>Good morning, John!</span>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @academies.each do |academy| %>
+          <tr>
+            <td><%= academy.name %></td>
+            <td><%= link_to 'Show', academy %></td>
+            <td><%= link_to 'Edit', edit_academy_path(academy) %></td>
+            <td><%= link_to 'Destroy', academy, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <br>
+    <%= link_to 'New Academy', new_academy_path %>
+  </div>
+</div>

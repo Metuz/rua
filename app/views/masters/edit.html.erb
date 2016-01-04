@@ -1,6 +1,12 @@
-<h1>Editing master</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @master %> |
-<%= link_to 'Back', masters_path %>
+<div class="page-header">
+  <div class="page-title">
+    <h2>Editar Carrera</h2>
+    <span>Good morning, John!</span>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <%= render 'form' %>
+    <%= link_to 'Regresar', masters_path, :class => "btn btn-primary pull-right" %><br>
+  </div>
+</div>

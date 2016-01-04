@@ -1,20 +1,10 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @student.name %>
-</p>
-
-<p>
-  <strong>Lname:</strong>
-  <%= @student.lname %>
-</p>
-
-<p>
-  <strong>Mname:</strong>
-  <%= @student.mname %>
-</p>
-
+<div class="page-header">
+  <div class="page-title">
+    <h2><%= @student.name %> <%= @student.lname %> <%= @student.mname %></h2>
+    <span>Good morning, John!</span>
+    <p id="notice"><%= notice %></p>
+  </div>
+</div>
 <p>
   <strong>Pin:</strong>
   <%= @student.pin %>

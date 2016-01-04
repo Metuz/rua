@@ -1,23 +1,50 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @academy.name %>
-</p>
-
-<p>
-  <strong>Teachers:</strong>
-  <% @academy.teachers.each do |teacher| %>
-    <%= teacher.name %>
-  <% end %>
-</p>
-
-<p>
-  <strong>Subjects:</strong>
-  <% @academy.subjects.each do |subject| %>
-    <%= subject.name %>
-  <% end %>
-</p>
+<div class="page-header">
+  <div class="page-title">
+    <h2><%= @academy.name %></h2>
+    <span>Good morning, John!</span>
+    <p id="notice"><%= notice %></p>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-6">
+    <h4>Profesores</h4>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Número de Empleado</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @academy.teachers.each do |teacher| %>
+          <tr>
+            <td><%= teacher.name %> <%= teacher.lname %> <%= teacher.mname %></td>
+            <td><%= teacher.pin %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+  <div class="col-md-6">
+    <h4>Unidades de Aprendizaje</h4>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Clave</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @academy.subjects.each do |subject| %>
+          <tr>
+            <td><%= subject.name %></td>
+            <td><%= subject.pin %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
 
 <%= link_to 'Edit', edit_academy_path(@academy) %> |
 <%= link_to 'Back', academies_path %>

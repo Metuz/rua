@@ -1,41 +1,48 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @subject.name %>
-</p>
-
-<p>
-  <strong>Pin:</strong>
-  <%= @subject.pin %>
-</p>
-
-<p>
-  <strong>Credits:</strong>
-  <%= @subject.credits %>
-</p>
-
-<p>
-  <strong>Period:</strong>
-  <%= @subject.period %>
-</p>
-
-<p>
-  <strong>Academy:</strong>
-  <%= @subject.academy.name %>
-</p>
-
-<p>
-  <strong>Master:</strong>
-  <%= @subject.master.name %>
-</p>
-
-<p>
-  <strong>Teachers:</strong>
-  <% @subject.teachers.each do |teacher| %>
-    <%= teacher.name %>
-  <% end %>
-</p>
-
+<div class="page-header">
+  <div class="page-title">
+    <h2><%= @subject.name %></h2>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <dl class="dl-horizontal">
+      <dt>Clave</dt>
+      <dd><%= @subject.pin %></dd>
+      <br>
+      <dt>Creditos</dt>
+      <dd><%= @subject.credits %></dd>
+      <br>
+      <dt>Periodo</dt>
+      <dd><%= @subject.period %></dd>
+      <br>
+      <dt>Academia</dt>
+      <dd><%= @subject.academy.name %></dd>
+      <br>
+      <dt>Carrera</dt>
+      <dd><%= @subject.master.name %></dd>
+    </dl>
+    <div class="row">
+      <div class="col-md-12">
+        <h4>Profesores</h4>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Número de Empleado</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @subject.teachers.each do |teacher| %>
+              <tr>
+                <td><%= teacher.name %> <%= teacher.lname %> <%= teacher.mname %></td>
+                <td><%= teacher.pin %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
 <%= link_to 'Edit', edit_subject_path(@subject) %> |
 <%= link_to 'Back', subjects_path %>

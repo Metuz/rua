@@ -11,5 +11,8 @@
  * file per style scope.
  *
  *= require_tree .
+ *= require main
+ *= require responsive
+ *= require login
  *= require_self
  */

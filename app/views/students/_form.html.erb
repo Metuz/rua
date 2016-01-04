@@ -1,45 +1,59 @@
-<%= form_for(@student) do |f| %>
-  <% if @student.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@student.errors.count, "error") %> prohibited this student from being saved:</h2>
-
-      <ul>
-      <% @student.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :lname %><br>
-    <%= f.text_field :lname %>
-  </div>
-  <div class="field">
-    <%= f.label :mname %><br>
-    <%= f.text_field :mname %>
-  </div>
-  <div class="field">
-    <%= f.label :pin %><br>
-    <%= f.text_field :pin %>
-  </div>
-  <div class="field">
-    <%= f.label :entry %><br>
-    <%= f.text_field :entry %>
-  </div>
-  <div class="field">
-    <%= f.label :graduation %><br>
-    <%= f.text_field :graduation %>
-  </div>
-  <div class="field">
-    <%= f.label :master_id %><br>
-    <%= collection_select(:student, :master_id, Master.all, :id, :name) %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+<% if @student.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@student.errors.count, "error") %> prohibited this student from being saved:</h2>
+    <ul>
+    <% @student.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+    </ul>
   </div>
 <% end %>
+<div class="widget box">
+  <div class="widget-content">
+    <%= form_for(@student, :class => "form-horizontal row-border") do |f| %>
+      <div class="form-group">
+        <div class="row">
+          <div class="col-md-3">
+            <%= f.label :name, "Nombre", :class => "control-label" %>
+            <%= f.text_field :name, :class => "form-control" %>
+          </div>
+          <div class="col-md-3">
+            <%= f.label :lname, "Apellido Paterno", :class => "control-label" %>
+            <%= f.text_field :lname, :class => "form-control" %>
+          </div>
+          <div class="col-md-3">
+            <%= f.label :mname, "Apellido Materno", :class => "control-label" %>
+            <%= f.text_field :mname, :class => "form-control" %>
+          </div>
+          <div class="col-md-3">
+            <%= f.label :pin, "Número de Boleta", :class => "control-label" %>
+            <%= f.text_field :pin, :class => "form-control" %>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="row">
+          <div class="col-md-4">
+            <%= f.label :entry, "Ingreso", :class => "control-label"  %>
+            <%= f.text_field :entry, :class => "form-control" %>
+          </div>
+          <div class="col-md-4">
+            <%= f.label :graduation, "Egreso", :class => "control-label"  %>
+            <%= f.text_field :graduation, :class => "form-control" %>
+          </div>
+          <div class="col-md-4">
+            <%= f.label :master_id, "Carrera", :class => "control-label" %>
+            <%= f.collection_select(:master_id, Master.all, :id, :name, {}, {:class => "form-control"}) %>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="row">
+          <div class="col-md-12">
+            <%= f.submit "Aceptar", :class => "btn btn-primary pull-right" %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -1,25 +1,30 @@
-<h1>Listing masters</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @masters.each do |master| %>
+<div class="page-header">
+  <div class="page-title">
+    <h2>Carreras</h2>
+    <span>Good morning, John!</span>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+  <table class="table">
+    <thead>
       <tr>
-        <td><%= master.name %></td>
-        <td><%= link_to 'Show', master %></td>
-        <td><%= link_to 'Edit', edit_master_path(master) %></td>
-        <td><%= link_to 'Destroy', master, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Nombre</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Master', new_master_path %>
+    </thead>
+    <tbody>
+      <% @masters.each do |master| %>
+        <tr>
+          <td><%= master.name %></td>
+          <td><%= link_to 'Show', master %></td>
+          <td><%= link_to 'Edit', edit_master_path(master) %></td>
+          <td><%= link_to 'Destroy', master, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <br>
+  <%= link_to 'New Master', new_master_path %>
+  </div>
+</div>

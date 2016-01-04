@@ -17,13 +17,19 @@ class Teacher < ActiveRecord::Base
   VALID_PIN_REGEX = /\A\d*$\z/i
 	validates :pin, presence: true, format: { with: VALID_PIN_REGEX }, uniqueness: true
 
+  before_save :set_total
+
   validate :set_total_hrs
 
   private
+
   def set_total_hrs
     if self.posts.map(&:hrs).sum > 40
       errors.add(:total_hrs, "La suma total de las horas no puede ser mayor a 40")
     end
   end
 
+  def set_total
+    self.total_hrs = self.posts.sum(:hrs)
+  end
 end

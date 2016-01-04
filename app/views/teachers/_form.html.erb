@@ -1,86 +1,108 @@
-<%= form_for(@teacher) do |f| %>
-  <% if @teacher.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@teacher.errors.count, "error") %> prohibited this teacher from being saved:</h2>
-
-      <ul>
-      <% @teacher.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :lname %><br>
-    <%= f.text_field :lname %>
-  </div>
-  <div class="field">
-    <%= f.label :mname %><br>
-    <%= f.text_field :mname %>
-  </div>
-  <div class="field">
-    <%= f.label :pin %><br>
-    <%= f.text_field :pin %>
-  </div>
-  <div class="field">
-    <%= f.label :degree %><br>
-    <%= f.text_field :degree %>
-  </div>
-  <div class="field">
-    <%= f.label :master %><br>
-    <%= f.text_field :master %>
-  </div>
-  <div class="field">
-    <%= f.label :dictamen %><br>
-    <%= f.text_field :dictamen %>
-  </div>
-  <div class="field">
-    <%= f.label :shift %><br>
-    <%= f.text_field :shift %>
-  </div>
-  <div class="field">
-    <%= f.label :age %><br>
-    <%= f.number_field :age %>
-  </div>
-  <div class="field">
-    <p>
-      Academies
-    </p>
-    <% Academy.all.each do |academy| %>
-      <div class="checkbox">
-        <label>
-          <%= check_box_tag 'teacher[academy_ids][]', academy.id, f.object.academies.include?(academy) %> <%= academy.name %>
-        </label>
+<% if @teacher.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@teacher.errors.count, "error") %> prohibited this teacher from being saved:</h2>
+    <ul>
+    <% @teacher.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
     <% end %>
-  </div>
-  <div class="field">
-    <p>
-      Subjects
-    </p>
-    <% Subject.all.each do |subject| %>
-      <div class="checkbox">
-        <label>
-          <%= check_box_tag 'teacher[subject_ids][]', subject.id, f.object.subjects.include?(subject) %> <%= subject.name %>
-        </label>
-    <% end %>
-  </div>
-  <div class="field">
-    <p>
-      Posts
-    </p>
-    <%= f.fields_for :posts do |post| %>
-      <%= post.label :name %>
-      <%= post.text_field :name %><br>
-      <%= post.label :hrs %>
-      <%= post.number_field :hrs %><br>
-    <% end %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+    </ul>
   </div>
 <% end %>
+<div class="widget box">
+  <div class="widget-content">
+    <%= form_for(@teacher, :class => "form-horizontal row-border" ) do |f| %>
+      <div class="form-group">
+        <div class="row">
+          <div class="col-md-3">
+            <%= f.label :name, "Nombre",  :class => "control-label" %>
+            <%= f.text_field :name, :class => "form-control" %>
+          </div>
+          <div class="col-md-3">
+            <%= f.label :lname, "Apellido Paterno",  :class => "control-label" %>
+            <%= f.text_field :lname, :class => "form-control" %>
+          </div>
+          <div class="col-md-3">
+            <%= f.label :mname, "Apellido Materno",  :class => "control-label" %>
+            <%= f.text_field :mname, :class => "form-control" %>
+          </div>
+          <div class="col-md-3">
+            <%= f.label :pin, "Numero de Empleado",  :class => "control-label" %>
+            <%= f.text_field :pin, :class => "form-control" %>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="row">
+          <div class="col-md-6">
+            <%= f.label :degree, "Licenciatura",  :class => "control-label" %>
+            <%= f.text_field :degree, :class => "form-control" %>
+          </div>
+          <div class="col-md-6">
+            <%= f.label :master, "Postgrado",  :class => "control-label" %>
+            <%= f.text_field :master, :class => "form-control" %>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="row">
+          <div class="col-md-4">
+            <%= f.label :shift, "Turno",  :class => "control-label" %>
+            <%= f.text_field :shift, :class => "form-control" %>
+          </div>
+          <div class="col-md-4">
+            <%= f.label :age, "Antiguedad",  :class => "control-label" %>
+            <%= f.text_field :age, :class => "form-control" %>
+          </div>
+          <div class="col-md-4">
+            <%= f.label :dictamen, "Dictamen",  :class => "control-label" %>
+            <%= f.text_field :dictamen, :class => "form-control" %>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="row">
+          <label class="col-md-2 control-label">Academias: </label>
+          <div class="col-md-10">
+            <% Academy.all.each do |academy| %>
+              <label class="checkbox-inline">
+                <%= check_box_tag 'teacher[academy_ids][]', academy.id, f.object.academies.include?(academy) %><%= academy.name %>
+              </label>
+            <% end %>
+          </div>
+        </div>
+			</div>
+      <div class="form-group">
+        <div class="row">
+          <label class="col-md-2 control-label">Unidades de Aprenddizaje: </label>
+          <div class="col-md-10">
+            <% Subject.all.each do |subject| %>
+              <label class="checkbox-inline">
+                <%= check_box_tag 'teacher[subject_ids][]', subject.id, f.object.subjects.include?(subject) %><%= subject.name %>
+              </label>
+            <% end %>
+          </div>
+        </div>
+			</div>
+      <div class="form-group">
+        <div class="row">
+          <label class="col-md-2 control-label">Plazas: </label>
+          <div class="col-md-4">
+            <%= f.fields_for :posts do |post| %>
+              <%= post.label :name, "Tipo", :class => "control-label" %>
+              <%= post.text_field :name, :class => "form-control" %>
+              <%= post.label :hrs, "Horas", :class => "control-label" %>
+              <%= post.text_field :hrs, :class => "form-control"  %><br>
+            <% end %>
+          </div>
+        </div>
+			</div>
+      <div class="form-group">
+        <div class="row">
+          <div class="col-md-10">
+            <%= f.submit "Aceptar", :class => "btn btn-primary pull-right" %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
