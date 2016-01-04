@@ -16,6 +16,9 @@ class Teacher < ActiveRecord::Base
   validates :age, :numericality => { :greater_than_or_equal_to => 0 }
   VALID_PIN_REGEX = /\A\d*$\z/i
 	validates :pin, presence: true, format: { with: VALID_PIN_REGEX }, uniqueness: true
+  validates :posts, presence: true
+  validates :academies, presence: true
+
 
   before_save :set_total
 

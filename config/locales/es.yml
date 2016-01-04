@@ -1,0 +1,122 @@
+es:
+  activerecord:
+    attributes:
+      academy:
+        name: "El Nombre"
+      major:
+        name: "El Nombre"
+      teacher:
+        name: "Nombre o Nombres"
+        lname: "Apellido Paterno"
+        mname: "Apellido Materno"
+        degree: "Licenciatura"
+        master: "Postgrado"
+        shift: "Turno"
+        dictamen: "Dictamen"
+        age: "Antiguedad"
+        pin: "Número de Empelado"
+        total_hrs: "Total de Horas"
+        posts: "Plaza"
+        academies: "Academia"
+      subject:
+        name: "Nombre"
+        pin: "Clave"
+        period: "Periodo"
+        credits: "Creditos"
+      student:
+        name: "Nombre o Nombres"
+        lname: "Apellido Paterno"
+        mname: "Apellido Materno"
+        entry: "Ingreso"
+        graduation: "Egreso"
+        pin: "Número de Boleta"
+      post:
+        name: "Plaza"
+        hrs: "Horas"
+    errors:
+      models:
+        academy:
+          attributes:
+            name:
+              blank: "es necesario"
+              taken: "ya se encuentra registrado"
+              too_long: "es demasiado largo"
+        major:
+          attributes:
+            name:
+              blank: "es necesario"
+              taken: "ya se encuentra registrado"
+              too_long: "es demasiado largo"
+        teacher:
+          attributes:
+            name:
+              blank: "es necesario"
+              too_long: "es demasiado largo"
+            lname:
+              blank: "es necesario"
+              too_long: "es demasiado largo"
+            mname:
+              blank: "es necesario"
+              too_long: "es demasiado largo"
+            degree:
+              blank: "es necesaria"
+              too_long: "es demasiada larga"
+            master:
+              too_long: "es demasiado largo"
+            dictamen:
+              blank: "es necesario"
+              too_long: "es demasiado largo"
+            age:
+              blank: "es necesaria"
+              too_long: "es demasiada larga"
+              greater_than_or_equal_to: "debe ser mayor o igual a 0"
+              not_a_number: "es necesario ingresar un digito"
+            pin:
+              blank: "es necesario"
+              invalid: "el formato es erroneo"
+              taken: "ya se encuentra registrado"
+            shift:
+              blank: "es necesario"
+              too_long: "es demasiado largo"
+            posts:
+              blank: "es necesario que introdusca al menos una plaza"
+            academies:
+              blank: "es necesario que introdusca al menos una academia"
+        subject:
+          attributes:
+            name:
+              blank: "es necesario"
+              taken: "ya se encuentra registrado"
+              too_long: "es demasiado largo"
+            pin:
+              blank: "es necesaria"
+              too_long: "es demasiada larga"
+            period:
+              blank: "es necesario"
+            credits:
+              blank: "es necesario"
+              not_a_number: "es necesario ingresar un digito"
+        student:
+          attributes:
+            name:
+              blank: "es necesario"
+              too_long: "es demasiado largo"
+            lname:
+              blank: "es necesario"
+              too_long: "es demasiado largo"
+            mname:
+              blank: "es necesario"
+              too_long: "es demasiado largo"
+            entry:
+              blank: "es necesario"
+            pin:
+              blank: "es necesario"
+              invalid: "el formato es incorrecto"
+              too_long: "es demasiado largo"
+        post:
+          attributes:
+            name:
+              blank: "es requerido"
+            hrs:
+              greater_than: "debe ser mayor a 0"
+              less_than_or_equal_to: "debe ser igual o menor a 40"

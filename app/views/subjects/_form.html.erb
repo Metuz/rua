@@ -1,6 +1,6 @@
 <% if @subject.errors.any? %>
   <div id="error_explanation">
-    <h2><%= pluralize(@subject.errors.count, "error") %> prohibited this subject from being saved:</h2>
+    <h2><%= pluralize(@subject.errors.count, "error") %> ha evitado que se complete la operación:</h2>
     <ul>
     <% @subject.errors.full_messages.each do |message| %>
       <li><%= message %></li>

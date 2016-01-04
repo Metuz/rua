@@ -17,7 +17,7 @@
 
 <p>
   <strong>Graduation:</strong>
-  <%= @student.graduation %>
+  <%= @student.graduation.strftime("%d/%m/%Y") if @student.graduation.present? %>
 </p>
 
 <p>

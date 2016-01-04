@@ -30,12 +30,12 @@ class TeachersController < ApplicationController
   # POST /teachers.json
   def create
     @teacher = Teacher.new(teacher_params)
-
     respond_to do |format|
       if @teacher.save
         format.html { redirect_to @teacher, notice: 'Teacher was successfully created.' }
         format.json { render :show, status: :created, location: @teacher }
       else
+        3.times { @teacher.posts.build }
         format.html { render :new }
         format.json { render json: @teacher.errors, status: :unprocessable_entity }
       end

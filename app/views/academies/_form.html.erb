@@ -1,6 +1,6 @@
 <% if @academy.errors.any? %>
   <div id="error_explanation">
-    <h2><%= pluralize(@academy.errors.count, "error") %> prohibited this academy from being saved:</h2>
+    <h2><%= pluralize(@academy.errors.count, "error") %> ha evitado que se complete la operación:</h2>
     <ul>
     <% @academy.errors.full_messages.each do |message| %>
       <li><%= message %></li>
