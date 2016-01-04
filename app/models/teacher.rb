@@ -30,6 +30,6 @@ class Teacher < ActiveRecord::Base
   end
 
   def set_total
-    self.total_hrs = self.posts.sum(:hrs)
+    self.total_hrs = self.posts.map(&:hrs).sum
   end
 end

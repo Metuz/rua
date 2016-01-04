@@ -42,8 +42,8 @@
             <%= f.text_field :graduation, :class => "form-control" %>
           </div>
           <div class="col-md-4">
-            <%= f.label :master_id, "Carrera", :class => "control-label" %>
-            <%= f.collection_select(:master_id, Master.all, :id, :name, {}, {:class => "form-control"}) %>
+            <%= f.label :major_id, "Carrera", :class => "control-label" %>
+            <%= f.collection_select(:major_id, Major.all, :id, :name, {}, {:class => "form-control"}) %>
           </div>
         </div>
       </div>
