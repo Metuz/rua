@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  resources :students
+  resources :majors
 
-  resources :masters
+  resources :students
 
   resources :subjects
 

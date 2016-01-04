@@ -1,4 +1,4 @@
-class CreateStudents < ActiveRecord::Migration
+class Createstudentstable < ActiveRecord::Migration
   def change
     create_table :students do |t|
       t.string :name
@@ -7,7 +7,7 @@ class CreateStudents < ActiveRecord::Migration
       t.string :pin
       t.datetime :entry
       t.datetime :graduation
-      t.references :master, index: true
+      t.references :major, index: true
 
       t.timestamps
     end

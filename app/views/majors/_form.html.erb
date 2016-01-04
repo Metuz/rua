@@ -1,8 +1,8 @@
-<% if @master.errors.any? %>
+<% if @major.errors.any? %>
   <div id="error_explanation">
-    <h2><%= pluralize(@master.errors.count, "error") %> prohibited this academy from being saved:</h2>
+    <h2><%= pluralize(@major.errors.count, "error") %> prohibited this academy from being saved:</h2>
     <ul>
-    <% @master.errors.full_messages.each do |message| %>
+    <% @major.errors.full_messages.each do |message| %>
       <li><%= message %></li>
     <% end %>
     </ul>
@@ -10,7 +10,7 @@
 <% end %>
 <div class="widget box">
   <div class="widget-content">
-    <%= form_for(@master, :class => "form-horizontal row-border") do |f| %>
+    <%= form_for(@major, :class => "form-horizontal row-border") do |f| %>
       <div class="form-group">
         <div class="row">
           <div class="col-md-4 col-md-offset-4">

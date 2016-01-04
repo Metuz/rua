@@ -1,6 +1,6 @@
 <div class="page-header">
   <div class="page-title">
-    <h2><%= @master.name %></h2>
+    <h2><%= @major.name %></h2>
     <span>Good morning, John!</span>
     <p id="notice"><%= notice %></p>
   </div>
@@ -16,7 +16,7 @@
         </tr>
       </thead>
       <tbody>
-        <% @master.students.each do |student| %>
+        <% @major.students.each do |student| %>
           <tr>
             <td><%= student.name %> <%= student.lname %> <%= student.mname %></td>
             <td><%= student.pin %></td>
@@ -35,7 +35,7 @@
         </tr>
       </thead>
       <tbody>
-        <% @master.subjects.each do |subject| %>
+        <% @major.subjects.each do |subject| %>
           <tr>
             <td><%= subject.name %></td>
             <td><%= subject.pin %></td>
@@ -45,5 +45,5 @@
     </table>
   </div>
 </div>
-<%= link_to 'Edit', edit_master_path(@master) %> |
-<%= link_to 'Back', masters_path %>
+<%= link_to 'Edit', edit_major_path(@major) %> |
+<%= link_to 'Back', majors_path %>
