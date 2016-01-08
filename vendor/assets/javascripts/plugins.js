@@ -197,11 +197,23 @@ var Plugins = function() {
 			// Set default options
 			$.extend(true, $.fn.dataTable.defaults, {
 				"oLanguage": {
-					"sSearch": ""
+					"oPaginate": {
+						"sFirst": "Primera Pagina",
+						"sLast": "Ultima pagina",
+	        	"sNext": "Siguiente",
+						"sPrevious": "Anterior"
+      		},
+					"sEmptyTable": "Tabla Vacia",
+					"sInfoEmpty": "Sin concidencias",
+					"sLengthMenu": "Mostrar _MENU_ ",
+					"sSearch": "Buscar:",
+					"sInfo": "Mostrando _START_ de _TOTAL_",
+					"sInfoFiltered": "",
+					"sZeroRecords": "No se encontro concidencias"
 				},
 				"sDom": "<'row'<'dataTables_header clearfix'<'col-md-6'l><'col-md-6'f>r>>t<'row'<'dataTables_footer clearfix'<'col-md-6'i><'col-md-6'p>>>",
 				// set the initial value
-				"iDisplayLength": 5,
+				"iDisplayLength": 20,
 				fnDrawCallback: function () {
 					if ($.fn.uniform) {
 						$(':radio.uniform, :checkbox.uniform').uniform();
@@ -222,7 +234,7 @@ var Plugins = function() {
 					//search_input.attr('placeholder', 'Search')
 					search_input.addClass('form-control')
 					search_input.wrap('<div class="input-group"></div>');
-					search_input.parent().prepend('<span class="input-group-addon"><i class="icon-search"></i></span>');
+					search_input.parent().prepend('<span class="input-group-addon"><i class="fa fa-search"></i></span>');
 					//search_input.parent().prepend('<span class="input-group-addon"><i class="icon-search"></i></span>').css('width', '250px');
 
 					// Responsive
@@ -232,7 +244,7 @@ var Plugins = function() {
 				}
 			});
 
-			$.fn.dataTable.defaults.aLengthMenu = [[5, 10, 25, 50, -1], [5, 10, 25, 50, "All"]];
+			$.fn.dataTable.defaults.aLengthMenu = [[20, 40, 60, 80, -1], [20, 40, 60, 80, "Todos"]];
 
 			// Initialize default datatables
 			$('.datatable').each(function () {

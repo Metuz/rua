@@ -6,25 +6,25 @@
 </div>
 <div class="row">
   <div class="col-md-12">
-  <table class="table">
-    <thead>
-      <tr>
-        <th>Nombre</th>
-        <th colspan="3"></th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @majors.each do |major| %>
-        <tr>
-          <td><%= major.name %></td>
-          <td><%= link_to 'Show', major %></td>
-          <td><%= link_to 'Edit', edit_major_path(major) %></td>
-          <td><%= link_to 'Destroy', major, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-  <br>
-  <%= link_to 'New Master', new_major_path %>
+    <div class="widget_box">
+      <div class="widget_content">
+        <table class = "table table-striped table-bordered table-hover datatable">
+          <thead>
+            <tr>
+              <th>Nombre</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @majors.each do |major| %>
+              <tr>
+                <td><%= major.name %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+        <br>
+        <%= link_to 'New Master', new_major_path %>
+      </div>
+    </div>
   </div>
 </div>

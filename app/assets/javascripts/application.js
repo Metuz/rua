@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap
+
 //= require lodash.compat.min
 //= require breakpoints
 //= require respond.min
@@ -30,6 +31,10 @@
 //= require default
 //= require jquery.uniform.min
 //= require select2.min
+//= require jquery.dataTables.min
+//= require TableTools.min
+//= require ColVis.min
+//= require DT_bootstrap
 //= require app
 //= require plugins.js
 //= require plugins.form-components
