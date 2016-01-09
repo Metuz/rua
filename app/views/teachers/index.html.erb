@@ -6,45 +6,41 @@
 </div>
 <div class="row">
   <div class="col-md-12">
-    <table class="table">
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Lname</th>
-          <th>Mname</th>
-          <th>Pin</th>
-          <th>Degree</th>
-          <th>Master</th>
-          <th>Dictamen</th>
-          <th>Shift</th>
-          <th>Age</th>
-          <th colspan="3"></th>
-        </tr>
-      </thead>
-
-      <tbody>
-        <% @teachers.each do |teacher| %>
-          <tr>
-            <td><%= teacher.name %></td>
-            <td><%= teacher.lname %></td>
-            <td><%= teacher.mname %></td>
-            <td><%= teacher.pin %></td>
-            <td><%= teacher.degree %></td>
-            <td><%= teacher.master %></td>
-            <td><%= teacher.dictamen %></td>
-            <td><%= teacher.shift %></td>
-            <td><%= teacher.age %></td>
-            <td><%= link_to 'Show', teacher %></td>
-            <td><%= link_to 'Edit', edit_teacher_path(teacher) %></td>
-            <td><%= link_to 'Destroy', teacher, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
-
-    <br>
-
-    <%= link_to 'New Teacher', new_teacher_path %>
-
+    <div class="widget_box">
+      <div class="widget_content">
+        <table class = "table table-striped table-bordered table-hover datatable">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Lname</th>
+              <th>Mname</th>
+              <th>Pin</th>
+              <th>Degree</th>
+              <th>Master</th>
+              <th>Dictamen</th>
+              <th>Shift</th>
+              <th>Age</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @teachers.each do |teacher| %>
+              <tr>
+                <td><%= teacher.name %></td>
+                <td><%= teacher.lname %></td>
+                <td><%= teacher.mname %></td>
+                <td><%= teacher.pin %></td>
+                <td><%= teacher.degree %></td>
+                <td><%= teacher.master %></td>
+                <td><%= teacher.dictamen %></td>
+                <td><%= teacher.shift %></td>
+                <td><%= teacher.age %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+        <br>
+        <%= link_to 'New Teacher', new_teacher_path %>
+      </div>
+    </div>
   </div>
 </div>
