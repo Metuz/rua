@@ -40,3 +40,8 @@
     </div>
   </div>
 </div>
+<h2>Importar Alumnos</h2>
+    <%= form_tag import_students_path, multipart: true do %>
+        <%= file_field_tag :file %>
+        <%= submit_tag "Importar" %>
+    <% end %>

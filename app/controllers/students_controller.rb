@@ -61,6 +61,11 @@ class StudentsController < ApplicationController
     end
   end
 
+  def import
+    Student.import(params[:file])
+    redirect_to students_url, notice: "Alumnos Importados"
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_student

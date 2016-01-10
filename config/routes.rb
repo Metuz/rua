@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   resources :majors
 
-  resources :students
+  resources :students do
+    collection { post :import }
+  end
 
   resources :subjects
 
