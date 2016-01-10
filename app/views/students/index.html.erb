@@ -1,3 +1,39 @@
+<div class="crumbs">
+  <ul id="breadcrumbs" class="breadcrumb">
+    <li><a href="#">Dashboard</a></li>
+    <li class="current"><a href="#" title="">Calendar</a></li>
+  </ul>
+  <ul class="crumb-buttons">
+    <li><%= link_to new_student_path do %><span>Agregar Alumno</span><% end %></li>
+    <li><a data-toggle="modal" href="#importStudents"><span>Importar Alumnos</span></a></li>
+    <div class="modal fade" id="importStudents">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title">Importar Alumnos</h4>
+          </div>
+          <div class="modal-body">
+            <%= form_tag import_students_path, multipart: true, :class => "form-horizontal row-border" do %>
+              <div class="form-group">
+                <label class="col-md-2 control-label">Archivo:</label>
+                <div class="col-md-6">
+                  <%= file_field_tag :file %>
+                </div>
+                <div class="col-md-2">
+                  <%= submit_tag "Importar", :class => "btn btn-primary pull-right" %>
+                </div>
+              </div>
+            <% end %>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+  </ul>
+</div>
 <div class="page-header">
   <div class="page-title">
     <h2>Estudiantes</h2>
@@ -40,8 +76,3 @@
     </div>
   </div>
 </div>
-<h2>Importar Alumnos</h2>
-    <%= form_tag import_students_path, multipart: true do %>
-        <%= file_field_tag :file %>
-        <%= submit_tag "Importar" %>
-    <% end %>
