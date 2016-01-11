@@ -21,6 +21,10 @@ gem 'ransack', github: 'activerecord-hackery/ransack'
 gem 'thinreports-rails'
 # Devise
 gem 'devise'
+# Chartkick
+gem "chartkick"
+# groupdate
+gem 'groupdate'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
