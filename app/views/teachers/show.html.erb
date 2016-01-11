@@ -1,3 +1,13 @@
+<div class="crumbs">
+  <ul id="breadcrumbs" class="breadcrumb">
+    <li><a href="#">Dashboard</a></li>
+  </ul>
+  <ul class="crumb-buttons">
+    <li><%= link_to edit_teacher_path(@teacher) do %><span>Editar Profesor</span><% end %></li>
+    <li><%= link_to @teacher, method: :delete do %><span>Eliminar Profesor</span><% end %></li>
+    <li><%= link_to teacher_path do %><span>Profesores</span><% end %></li>
+  </ul>
+</div>
 <div class="page-header">
   <div class="page-title">
     <h2>Profesor: <%= @teacher.name %> <%= @teacher.lname %> <%= @teacher.mname %> </h2>
@@ -83,7 +93,5 @@
         </tbody>
       </table>
     </div>
-    <%= link_to 'Edit', edit_teacher_path(@teacher) %> |
-    <%= link_to 'Back', teachers_path %>
   </div>
 </div>

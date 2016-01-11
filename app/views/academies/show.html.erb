@@ -1,3 +1,13 @@
+<div class="crumbs">
+  <ul id="breadcrumbs" class="breadcrumb">
+    <li><a href="#">Dashboard</a></li>
+  </ul>
+  <ul class="crumb-buttons">
+    <li><%= link_to edit_academy_path(@academy) do %><span>Editar Academia</span><% end %></li>
+    <li><%= link_to @academy, method: :delete do %><span>Eliminar Academia</span><% end %></li>
+    <li><%= link_to academies_path do %><span>Academias</span><% end %></li>
+  </ul>
+</div>
 <div class="page-header">
   <div class="page-title">
     <h2><%= @academy.name %></h2>
@@ -45,6 +55,3 @@
     </table>
   </div>
 </div>
-
-<%= link_to 'Edit', edit_academy_path(@academy) %> |
-<%= link_to 'Back', academies_path %>

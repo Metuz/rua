@@ -1,3 +1,11 @@
+<div class="crumbs">
+  <ul id="breadcrumbs" class="breadcrumb">
+    <li><a href="#">Dashboard</a></li>
+  </ul>
+  <ul class="crumb-buttons">
+    <li><%= link_to new_teacher_path do %><span>Agregar Profesor</span><% end %></li>
+  </ul>
+</div>
 <div class="page-header">
   <div class="page-title">
     <h2>Profesores</h2>
@@ -38,8 +46,6 @@
             <% end %>
           </tbody>
         </table>
-        <br>
-        <%= link_to 'New Teacher', new_teacher_path %>
       </div>
     </div>
   </div>
