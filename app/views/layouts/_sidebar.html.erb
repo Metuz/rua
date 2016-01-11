@@ -2,12 +2,7 @@
 	<div id="sidebar" class="sidebar-fixed">
 		<div id="sidebar-content">
 			<ul id="nav"><!--=== Navigation ===-->
-				<li class="current">
-					<a href="#">
-						<i class="fa fa-dashboard"></i>
-						Dashboard
-					</a>
-				</li>
+				<li class="current"><%= link_to root_path do %><i class="fa fa-dashboard"></i> Dashboard<% end %></li>
 				<li><%= link_to teachers_path do %><i class="fa fa-male"></i> Profesores<% end %></li>
 				<li><%= link_to academies_path do %><i class="fa fa-building"></i> Academias<% end %></li>
 				<li><%= link_to subjects_path do %><i class="fa fa-book"></i> U. de Aprendizaje<% end %></li>

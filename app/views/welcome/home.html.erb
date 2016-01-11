@@ -1,2 +1,11 @@
-<h1>Welcome#home</h1>
-<p>Find me in app/views/welcome/home.html.erb</p>
+<div class="crumbs">
+  <ul id="breadcrumbs" class="breadcrumb">
+    <li><%= link_to "Dashboard", root_path %></li>
+  </ul>
+</div>
+<div class="page-header">
+  <div class="page-title">
+    <h2>Resumen</h2>
+    <span>Hola <%= current_user.name %></span>
+  </div>
+</div>
