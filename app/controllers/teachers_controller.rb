@@ -6,6 +6,11 @@ class TeachersController < ApplicationController
   def index
     @q = Teacher.search(params[:q])
     @teachers = @q.result(distinct: true).includes(:posts, :academies)
+    respond_to do |format|
+      format.html
+      format.js
+      format.pdf { render_teacher_list(@teachers) }
+    end
   end
 
   # GET /teachers/1
@@ -76,5 +81,21 @@ class TeachersController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def teacher_params
       params.require(:teacher).permit(:name, :lname, :mname, :pin, :degree, :master, :dictamen, :shift, :age, :total_hrs, {academy_ids: []}, {subject_ids: []}, posts_attributes: [:id, :name, :hrs, :_destroy])
+    end
+
+    def render_teacher_list(teachers)
+        report = ThinReports::Report.new layout: File.join(Rails.root, 'app', 'reports', 'rua.tlf')
+        report.start_new_page
+        report.page.item(:date).value(Time.now.strftime("%d/%m/%Y"))
+        teachers.each do |teacher|
+            report.list.add_row do |row|
+                row.values name: teacher.name,
+                    lname: teacher.lname,
+                    mname: teacher.mname,
+                    pin: teacher.pin,
+                    shift: teacher.shift
+            end
+        end
+        send_data report.generate, filename: 'profesores_reporte.pdf', type: 'application/pdf', disposition: 'attachment'
     end
 end
