@@ -7,7 +7,11 @@ Rails.application.routes.draw do
 
   resources :subjects
 
-  resources :teachers
+  resources :teachers do
+    collection do
+          match 'search' => 'teachers#index', via: [:get, :post], as: :search
+      end
+  end
 
   resources :academies
 

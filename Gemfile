@@ -17,6 +17,8 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'bootstrap-sass'
 # Font awwsome
 gem "font-awesome-rails"
+# Ransack
+gem 'ransack', github: 'activerecord-hackery/ransack'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks

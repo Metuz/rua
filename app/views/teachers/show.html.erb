@@ -5,7 +5,7 @@
   <ul class="crumb-buttons">
     <li><%= link_to edit_teacher_path(@teacher) do %><span>Editar Profesor</span><% end %></li>
     <li><%= link_to @teacher, method: :delete do %><span>Eliminar Profesor</span><% end %></li>
-    <li><%= link_to teacher_path do %><span>Profesores</span><% end %></li>
+    <li><%= link_to teachers_path do %><span>Profesores</span><% end %></li>
   </ul>
 </div>
 <div class="page-header">
@@ -15,7 +15,7 @@
   </div>
 </div>
 <div class="row">
-  <div class="col-md-12">
+  <div class="col-md-6">
     <dl class="dl-horizontal">
       <dt>Número de Empleado</dt>
       <dd><%= @teacher.pin %></dd>
@@ -35,63 +35,65 @@
       <dt>Antiguedad</dt>
       <dd><%= @teacher.age %> años</dd>
     </dl>
-    <div class="col-md-4">
-      <h3>Academias</h3>
-      <table class = "table table-striped table-bordered table-hover datatable">
-        <thead>
+  </div>
+  <div class="col-md-6">
+    <h3>Plazas</h3>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Horas</th>
+        </tr>
+      <tbody>
+        <% @teacher.posts.each do |post| %>
           <tr>
-            <th>Nombre</th>
+            <td><%= post.name %></td>
+            <td><%= post.hrs %></td>
           </tr>
-        </thead>
-        <tbody>
-          <% @teacher.academies.each do |academy| %>
-            <tr>
-              <td><%= link_to academy do %><i class="fa fa-eye"></i> <%= academy.name %><% end %></td>
-            </tr>
-          <% end %>
-        </tbody>
-      </table>
-    </div>
-    <div class="col-md-4">
-      <h3>Unidades de Aprendizaje</h3>
-      <table class = "table table-striped table-bordered table-hover datatable">
-        <thead>
+        <% end %>
+        <tr>
+          <th>Total</th>
+          <th><%= @teacher.total_hrs %></th>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-6">
+    <h3>Academias</h3>
+    <table class = "table table-striped table-bordered table-hover datatable">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @teacher.academies.each do |academy| %>
           <tr>
-            <th>Nombre</th>
-            <th>Academia</th>
+            <td><%= link_to academy do %><i class="fa fa-eye"></i> <%= academy.name %><% end %></td>
           </tr>
-        </thead>
-        <tbody>
-          <% @teacher.subjects.each do |subject| %>
-            <tr>
-              <td><%= link_to subject do %><i class="fa fa-eye"></i> <%= subject.name %><% end %></td>
-              <td><%= subject.academy.name %></td>
-            </tr>
-          <% end %>
-        </tbody>
-      </table>
-    </div>
-    <div class="col-md-4">
-      <h3>Plazas</h3>
-      <table class="table">
-        <thead>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+  <div class="col-md-6">
+    <h3>Unidades de Aprendizaje</h3>
+    <table class = "table table-striped table-bordered table-hover datatable">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Academia</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @teacher.subjects.each do |subject| %>
           <tr>
-            <th>Nombre</th>
-            <th>Horas</th>
+            <td><%= link_to subject do %><i class="fa fa-eye"></i> <%= subject.name %><% end %></td>
+            <td><%= subject.academy.name %></td>
           </tr>
-        <tbody>
-          <% @teacher.posts.each do |post| %>
-            <tr>
-              <td><%= post.name %></td>
-              <td><%= post.hrs %></td>
-            </tr>
-          <% end %>
-          <tr>
-            <th>Total</th>
-            <th><%= @teacher.total_hrs %></th>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+        <% end %>
+      </tbody>
+    </table>
   </div>
 </div>

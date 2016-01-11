@@ -4,7 +4,8 @@ class TeachersController < ApplicationController
   # GET /teachers
   # GET /teachers.json
   def index
-    @teachers = Teacher.all
+    @q = Teacher.search(params[:q])
+    @teachers = @q.result(distinct: true).includes(:posts, :academies)
   end
 
   # GET /teachers/1

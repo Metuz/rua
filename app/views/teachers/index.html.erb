@@ -4,6 +4,7 @@
   </ul>
   <ul class="crumb-buttons">
     <li><%= link_to new_teacher_path do %><span>Agregar Profesor</span><% end %></li>
+    <li><a data-toggle="collapse" href="#advance" aria-expanded="false" aria-controls="collapseExample"><span>Busqueda Avanzada</span></a></li>
   </ul>
 </div>
 <div class="page-header">
@@ -11,6 +12,77 @@
     <h2>Profesores</h2>
     <span>Good morning, John!</span>
   </div>
+</div>
+<div class="collapse" id="advance">
+  <%= search_form_for @q,  url: search_teachers_path, html: {:class => "form-horizontal row-border", method: :post}  do |f| %>
+    <div class = "form-group">
+      <div class="row">
+        <div class = "col-md-3">
+          <%= f.label :name_cont, 'Nombre', :class => "control-label" %>
+          <%= f.text_field :name_cont, :class => "form-control" %>
+        </div>
+        <div class = "col-md-3">
+          <%= f.label :lname_cont, 'Apellido Paterno', :class => "control-label" %>
+          <%= f.text_field :lname_cont, :class => "form-control" %>
+        </div>
+        <div class = "col-md-3">
+          <%= f.label :mname_cont, "Apellido Materno", :class => "control-label" %>
+          <%= f.text_field :mname_cont, :class => "form-control" %>
+        </div>
+        <div class = "col-md-3">
+          <%= f.label :pin_cont, "Numero de Empleado", :class => "control-label" %>
+          <%= f.text_field :pin_cont, :class => "form-control" %>
+        </div>
+      </div>
+      </div>
+      <div class="form-group">
+        <div class="row">
+          <div class = "col-md-3">
+            <%= f.label :academies_id_eq, "Academia", :class => "control-label" %>
+            <%= f.collection_select(:academies_id_eq, Academy.all, :id, :name, {:include_blank => true}, {:class => "form-control"}) %>
+          </div>
+          <div class = "col-md-3">
+            <%= f.label :shift_cont, "Turno", :class => "control-label" %>
+            <%= f.text_field :shift_cont, :class => "form-control" %>
+          </div>
+          <div class = "col-md-3">
+            <%= f.label :degree_cont, "Licenciatura", :class => "control-label" %>
+            <%= f.text_field :degree_cont, :class => "form-control" %>
+          </div>
+          <div class = "col-md-3">
+            <%= f.label :master_cont, "Posgrado", :class => "control-label" %>
+            <%= f.text_field :master_cont, :class => "form-control" %>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="row">
+          <div class = "col-md-3">
+            <%= f.label :dictamen_cont, "Dictamen", :class => "control-label" %>
+            <%= f.text_field :dictamen_cont, :class => "form-control" %>
+          </div>
+          <div class = "col-md-3">
+            <%= f.label :posts_hrs_gteq, "Rango de Horas (Mayor o Igual)", :class => "control-label" %>
+            <%= f.text_field :posts_hrs_gteq, :class => "form-control" %>
+          </div>
+          <div class = "col-md-3">
+            <%= f.label :posts_hrs_lteq, "Rango de Horas (Menor o Igual)", :class => "control-label" %>
+            <%= f.text_field :posts_hrs_lteq, :class => "form-control" %>
+          </div>
+          <div class = "col-md-3">
+            <%= f.label :age_eq, "Antiguedad", :class => "control-label" %>
+            <%= f.text_field :age_eq, :class => "form-control" %>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="row">
+          <div class="col-md-12">
+            <%= f.submit "Aceptar", :class => "btn btn-primary pull-right" %>
+          </div>
+        </div>
+      </div>
+    <% end %>
 </div>
 <div class="row">
   <div class="col-md-12">
