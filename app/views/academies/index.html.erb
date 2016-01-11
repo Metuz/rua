@@ -20,12 +20,16 @@
           <thead>
             <tr>
               <th>Nombre</th>
+              <th>Profesores</th>
+              <th>U. de Aprendizaje</th>
             </tr>
           </thead>
           <tbody>
             <% @academies.each do |academy| %>
               <tr>
-                <td><%= academy.name %></td>
+                <td><%= link_to academy do %><i class="fa fa-eye"></i> <%= academy.name %><% end %></td>
+                <td><%= academy.teachers.count %></td>
+                <td><%= academy.subjects.count %></td>
               </tr>
             <% end %>
           </tbody>

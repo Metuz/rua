@@ -44,7 +44,7 @@
           <tbody>
             <% @subject.teachers.each do |teacher| %>
               <tr>
-                <td><%= teacher.name %> <%= teacher.lname %> <%= teacher.mname %></td>
+                <td><%= link_to teacher do %><i class="fa fa-eye"></i> <%= teacher.name %> <%= teacher.lname %> <%= teacher.mname %><% end %></td>
                 <td><%= teacher.pin %></td>
               </tr>
             <% end %>

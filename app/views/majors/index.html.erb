@@ -20,12 +20,18 @@
           <thead>
             <tr>
               <th>Nombre</th>
+              <th>Alumnos</th>
+              <th>U. de Aprendizaje</th>
+              <th>Creditos</th>
             </tr>
           </thead>
           <tbody>
             <% @majors.each do |major| %>
               <tr>
-                <td><%= major.name %></td>
+                <td><%= link_to major do %><i class="fa fa-eye"></i> <%= major.name %><% end %></td>
+                <td><%= major.students.count %></td>
+                <td><%= major.subjects.count %></td>
+                <td><%= major.subjects.sum(:credits) %></td>
               </tr>
             <% end %>
           </tbody>

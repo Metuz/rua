@@ -28,7 +28,7 @@
       <tbody>
         <% @academy.teachers.each do |teacher| %>
           <tr>
-            <td><%= teacher.name %> <%= teacher.lname %> <%= teacher.mname %></td>
+            <td><%= link_to teacher do %><i class="fa fa-eye"></i> <%= teacher.name %> <%= teacher.lname %> <%= teacher.mname %><% end %></td>
             <td><%= teacher.pin %></td>
           </tr>
         <% end %>
@@ -47,7 +47,7 @@
       <tbody>
         <% @academy.subjects.each do |subject| %>
           <tr>
-            <td><%= subject.name %></td>
+            <td><%= link_to subject do %><i class="fa fa-eye"></i> <%= subject.name %><% end %></td>
             <td><%= subject.pin %></td>
           </tr>
         <% end %>
