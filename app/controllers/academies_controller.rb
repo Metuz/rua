@@ -1,5 +1,6 @@
 class AcademiesController < ApplicationController
   before_action :set_academy, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /academies
   # GET /academies.json

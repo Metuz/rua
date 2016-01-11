@@ -33,6 +33,11 @@ es:
       post:
         name: "Plaza"
         hrs: "Horas"
+      user:
+        name: "Nombre"
+        email: "Correo"
+        password: "Contraseña"
+        password_confirmation: "Confirmación Contraseña"
     errors:
       models:
         academy:
@@ -120,3 +125,11 @@ es:
             hrs:
               greater_than: "debe ser mayor a 0"
               less_than_or_equal_to: "debe ser igual o menor a 40"
+        user:
+          attributes:
+            name:
+              blank: "es requerido"
+            email:
+              blank: "es requerido"
+            password:
+              blank: "es requerida"
