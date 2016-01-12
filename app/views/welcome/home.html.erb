@@ -9,3 +9,54 @@
     <span>Hola <%= current_user.name %></span>
   </div>
 </div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="col-md-6">
+      <div class="widget box">
+        <div class="widget-header">
+          <h4><i class="fa fa-reorder"></i> Profesores Horas</h4>
+          <div class="toolbar no-padding">
+            <div class="btn-group">
+              <span class="btn btn-xs widget-collapse"><i class="fa fa-angle-down"></i></span>
+            </div>
+          </div>
+        </div>
+  			<div class="widget-content">
+          <%= column_chart @teachers_hrs %>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="widget box">
+        <div class="widget-header">
+          <h4><i class="fa fa-reorder"></i> Profesores Turnos</h4>
+          <div class="toolbar no-padding">
+            <div class="btn-group">
+              <span class="btn btn-xs widget-collapse"><i class="fa fa-angle-down"></i></span>
+            </div>
+          </div>
+        </div>
+        <div class="widget-content">
+          <%= pie_chart @teachers_shift %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="widget box">
+      <div class="widget-header">
+        <h4><i class="fa fa-reorder"></i> Alumnos</h4>
+        <div class="toolbar no-padding">
+          <div class="btn-group">
+            <span class="btn btn-xs widget-collapse"><i class="fa fa-angle-down"></i></span>
+          </div>
+        </div>
+      </div>
+  		<div class="widget-content">
+         <%= line_chart [{ name: "Ingreso", data: @admission },{ name: "Egreso", data: @graduation }], title: "1000px"%>
+      </div>
+    </div>
+  </div>
+</div>

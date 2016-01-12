@@ -23,6 +23,8 @@ gem 'thinreports-rails'
 gem 'devise'
 # Chartkick
 gem "chartkick"
+# highcharts-rails
+gem "highcharts-rails", "~> 3.0.0"
 # groupdate
 gem 'groupdate'
 # Use jquery as the JavaScript library

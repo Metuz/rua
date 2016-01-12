@@ -13,7 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap
-
+//= require highcharts
+//= require chartkick
 //= require lodash.compat.min
 //= require breakpoints
 //= require respond.min
