@@ -1,8 +1,8 @@
 class Teacher < ActiveRecord::Base
   has_many :academy_teachers
-  has_many :academies, through: :academy_teachers
+  has_many :academies, through: :academy_teachers, dependent: :destroy
   has_many :subject_teachers
-  has_many :subjects, through: :subject_teachers
+  has_many :subjects, through: :subject_teachers, dependent: :destroy
   has_many :posts, :dependent => :destroy
 	accepts_nested_attributes_for :posts, reject_if: :all_blank, :allow_destroy => true
 
