@@ -76,7 +76,7 @@ ActiveRecord::Schema.define(version: 20160111195719) do
   create_table "subjects", force: true do |t|
     t.string   "name"
     t.string   "pin"
-    t.string   "credits"
+    t.float    "credits"
     t.float    "period"
     t.datetime "created_at"
     t.datetime "updated_at"

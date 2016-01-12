@@ -3,7 +3,7 @@ class CreateSubjects < ActiveRecord::Migration
     create_table :subjects do |t|
       t.string :name
       t.string :pin
-      t.string :credits
+      t.float :credits
       t.float :period
 
       t.timestamps
