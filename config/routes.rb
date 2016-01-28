@@ -12,11 +12,17 @@ Rails.application.routes.draw do
 
   resources :teachers do
     collection do
-          match 'search' => 'teachers#index', via: [:get, :post], as: :search
+          match 'search' => 'teachers#index', via: [:get,:post], as: :search
       end
   end
 
   resources :academies
+
+  match '/informatica', to: 'students#it', via: [:get, :post]
+  match '/industrial', to: 'students#ie', via: [:get, :post]
+  match '/administracion', to: 'students#ai', via: [:get, :post]
+  match '/transporte', to: 'students#tr', via: [:get, :post]
+  match '/ciencias', to: 'students#ic', via: [:get, :post]
   root 'welcome#home'
 
   # The priority is based upon order of creation: first created -> highest priority.

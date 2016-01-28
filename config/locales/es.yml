@@ -1,4 +1,9 @@
 es:
+  devise:
+    failure:
+      user:
+        invalid: "Correo/Contraseña invalidos"
+        unauthenticated: "Es necesario Iniciar sesion"
   activerecord:
     attributes:
       academy:
@@ -118,6 +123,8 @@ es:
               blank: "es necesario"
               invalid: "el formato es incorrecto"
               too_long: "es demasiado largo"
+            major_id:
+              blank: "es necesario"
         post:
           attributes:
             name:

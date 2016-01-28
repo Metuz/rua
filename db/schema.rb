@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160111195719) do
+ActiveRecord::Schema.define(version: 20160127040811) do
 
   create_table "academies", force: true do |t|
     t.string   "name"
@@ -59,6 +59,7 @@ ActiveRecord::Schema.define(version: 20160111195719) do
     t.integer  "major_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "pre_pin"
   end
 
   add_index "students", ["major_id"], name: "index_students_on_major_id"
