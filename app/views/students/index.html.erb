@@ -49,6 +49,7 @@
               <th>Nombre</th>
               <th>Apellido Paterno</th>
               <th>Apellido Materno</th>
+              <th>Pre-Boleta</th>
               <th>Boleta</th>
               <th>Ingreso</th>
               <th>Graduación</th>
@@ -61,6 +62,7 @@
                 <td><%= student.name %></td>
                 <td><%= student.lname %></td>
                 <td><%= student.mname %></td>
+                <td><%= student.pre_pin %></td>
                 <td><%= student.pin %></td>
                 <td><%= student.entry.strftime("%d/%m/%Y") %></td>
                 <td><%= student.graduation.strftime("%d/%m/%Y") if student.graduation.present? %></td>

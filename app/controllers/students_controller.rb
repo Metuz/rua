@@ -68,7 +68,7 @@ class StudentsController < ApplicationController
   end
 
   def it
-    @student = Student.new(name: params[:name], lname: params[:lname], mname: params[:pre_pin], major_id: params[:major_id], entry: DateTime.now.to_date, )
+    @student = Student.new(name: params[:name], lname: params[:lname], mname: params[:mname], pre_pin: params[:pre_pin], major_id: params[:major_id], entry: DateTime.now.to_date, )
     respond_to do |format|
       if @student.save
         format.html { redirect_to informatica_path, notice: 'Gracias. Bienvenido!!!!' }
@@ -82,7 +82,7 @@ class StudentsController < ApplicationController
   end
 
   def ie
-    @student = Student.new(name: params[:name], lname: params[:lname], mname: params[:pre_pin], major_id: params[:major_id], entry: DateTime.now.to_date)
+    @student = Student.new(name: params[:name], lname: params[:lname], mname: params[:mname], pre_pin: params[:pre_pin], major_id: params[:major_id], entry: DateTime.now.to_date)
     respond_to do |format|
       if @student.save
         format.html { redirect_to industrial_path, notice: 'Gracias. Bienvenido!!!!' }
@@ -96,7 +96,7 @@ class StudentsController < ApplicationController
   end
 
   def ai
-    @student = Student.new(name: params[:name], lname: params[:lname], mname: params[:pre_pin], major_id: params[:major_id], entry: DateTime.now.to_date)
+    @student = Student.new(name: params[:name], lname: params[:lname], mname: params[:mname], pre_pin: params[:pre_pin], major_id: params[:major_id], entry: DateTime.now.to_date)
     respond_to do |format|
       if @student.save
         format.html { redirect_to administracion_path, notice: 'Gracias. Bienvenido!!!!' }
@@ -110,7 +110,7 @@ class StudentsController < ApplicationController
   end
 
   def tr
-    @student = Student.new(name: params[:name], lname: params[:lname], mname: params[:pre_pin], major_id: params[:major_id], entry: DateTime.now.to_date)
+    @student = Student.new(name: params[:name], lname: params[:lname], mname: params[:mname], pre_pin: params[:pre_pin], major_id: params[:major_id], entry: DateTime.now.to_date)
     respond_to do |format|
       if @student.save
         format.html { redirect_to transporte_path, notice: 'Gracias. Bienvenido!!!!' }
@@ -124,7 +124,7 @@ class StudentsController < ApplicationController
   end
 
   def ic
-    @student = Student.new(name: params[:name], lname: params[:lname], mname: params[:pre_pin], major_id: params[:major_id], entry: DateTime.now.to_date)
+    @student = Student.new(name: params[:name], lname: params[:lname], mname: params[:mname], pre_pin: params[:pre_pin], major_id: params[:major_id], entry: DateTime.now.to_date)
     respond_to do |format|
       if @student.save
         format.html { redirect_to ciencias_path, notice: 'Gracias. Bienvenido!!!!' }
