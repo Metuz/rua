@@ -10,7 +10,7 @@ class Teacher < ActiveRecord::Base
   validates :lname, presence: true, length: { maximum: 20 }
   validates :mname, presence: true, length: { maximum: 20 }
   validates :degree, presence: true, length: { maximum: 40 }
-  validates :master, length: { maximum: 20 }
+  validates :master, length: { maximum: 40 }
   validates :shift, presence: true, length: { maximum: 20 }
   validates :dictamen, presence: true, length: { maximum: 20 }
   validates :age, :numericality => { :greater_than_or_equal_to => 0 }
