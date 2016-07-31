@@ -38,7 +38,7 @@
             <%= f.collection_select(:academy_id, Academy.all, :id, :name, {}, {:class => "form-control"}) %>
           </div>
           <div class="col-md-3">
-            <%= f.label :major_id, "Carrera", :class => "control-label"%>
+            <%= f.label :major_id, "Programa Academico", :class => "control-label"%>
             <%= f.collection_select(:major_id, Major.all, :id, :name, {}, {:class => "form-control"}) %>
           </div>
         </div>
